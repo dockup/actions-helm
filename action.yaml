@@ -1,0 +1,33 @@
+name: Action for Helm charts
+description: Used to release helm charts to a cluster. Can update for now
+inputs:
+  provider:
+    description: Name of cloud provider for serving requests
+    required: true
+  gcp_credentials:
+    description: Base64 encoded json credentials for cluster access
+    required: false
+
+  cluster_name:
+    description: Kubernetes cluster name where chart has to be installed
+  cluster_region:
+    description: Region in which cluster is created
+
+  repository:
+    description: Helm repository from which chart has to be pulled
+    default: https://kubernetes-charts.storage.googleapis.com
+  chart_name:
+    description: Name of the chart to install
+    required: true
+  chart_version:
+    description: |
+      Version of chart to install. If none specified, latest will be used
+  name:
+    description: Name of the helm release.
+    required: true
+  set:
+    description: |
+      Values to be set for helm chart release. Note that actions don't
+      support inputs other than strings. So, for now specify all the
+      overrides in a separate line as shown in Readme, and this action
+      will take care of the rest.
