@@ -20,8 +20,8 @@ RUN apk add --no-cache python \
     && gcloud config set core/disable_usage_reporting true \
     && gcloud config set component_manager/disable_update_check true
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+COPY scripts /scripts
+RUN chmod -R +x /scripts
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/scripts/entrypoint.sh"]
 CMD ["--help"]
