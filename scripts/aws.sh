@@ -4,4 +4,6 @@
 
 set -e
 
-echo "aws setup"
+
+aws eks --region $INPUT_CLUSTER_REGION update-kubeconfig \
+    --name $INPUT_CLUSTER_NAME

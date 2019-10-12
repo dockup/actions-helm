@@ -14,5 +14,6 @@ else
 fi
 set_overrides=$(echo $INPUT_SET | xargs -n 1 | tr '\n' ',')
 
+
 helm upgrade --values values.yaml --set $set_overrides \
      $INPUT_NAME $INPUT_CHART_NAME

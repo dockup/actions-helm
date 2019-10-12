@@ -7,6 +7,10 @@ inputs:
   gcp_credentials:
     description: Base64 encoded json credentials for cluster access
     required: false
+  aws_access_key_id:
+    description: AWS access key id in case provider is aws
+  aws_secret_access_key:
+    description: AWS secret access key in case provider is aws
 
   cluster_name:
     description: Kubernetes cluster name where chart has to be installed

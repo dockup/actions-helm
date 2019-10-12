@@ -20,6 +20,12 @@ RUN apk add --no-cache python3 \
     && gcloud config set core/disable_usage_reporting true \
     && gcloud config set component_manager/disable_update_check true
 
+
+# Install awscli
+RUN apk add --no-cache python3 && \
+    pip3 install awscli
+
+
 COPY scripts /scripts
 RUN chmod -R +x /scripts
 
