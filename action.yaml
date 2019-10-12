@@ -25,6 +25,11 @@ inputs:
   name:
     description: Name of the helm release.
     required: true
+  values_file:
+    description: |
+      Base64 encoded yaml file containing overrides for default values
+      provided by the chart. The values in this file can again be
+      overridden using `set` input.
   set:
     description: |
       Values to be set for helm chart release. Note that actions don't
