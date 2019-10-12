@@ -8,9 +8,9 @@ See `action.yaml` to know what all inputs are required.
 
 ## Example usage
 
-Please pay special attention to `set` input variable.
+Please pay attention to `set` input variable.
 
-```
+```yaml
 - uses actions-helm@master
   with:
     provider: gcp
