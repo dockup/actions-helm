@@ -12,7 +12,7 @@ RUN apk add --no-cache ca-certificates bash ca-certificates curl jq \
 
 # Install Google sdk for gcloud
 ENV CLOUD_SDK_VERSION=266.0.0
-RUN apk add --no-cache python \
+RUN apk add --no-cache python3 \
     && curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz \
     && tar xzf google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz \
     && rm google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz \
